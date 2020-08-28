@@ -6,21 +6,27 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 
+import javax.validation.constraints.Size;
+
 /**
  * @project company-service
  * @authoer Prabhu Madipalli
  */
 
-@NoArgsConstructor
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Embeddable
-public class CompanyDetails {
+public class Address {
 
-    private String description;
+    private String addressLine1;
 
-    private String services;
+    private String addressLine2;
 
-    private String products;
+    private String addressLine3;
 
+    private String city;
+
+    @Size(max = 6, min = 5)
+    private String pinCode;
 }

@@ -34,4 +34,8 @@ public class StockCode {
     @JoinColumn(nullable = false, name = "comapny_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Company company;
+
+    @OneToOne(mappedBy = "ipo", targetEntity = Ipo.class, fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "ipo_id", nullable = true)
+    private Ipo ipo;
 }

@@ -1,11 +1,11 @@
 package com.prabhu.companyservice.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +18,6 @@ import java.util.List;
 @Data
 public class Company {
 
-    @JsonIgnore()
     @Id
     @GeneratedValue
     @Column(name = "company_id")
@@ -36,15 +35,23 @@ public class Company {
     private Person ceo;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
-    private List<Person> bod;
+    private List<Person> bod = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
-    private List<StockCode> stockCodes;
+    private List<StockCode> stockCodes = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.EAGER, mapped)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "sector_id")
     private Sector sector;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ipo")
+    private List<Ipo> ipos;
+
     @Embedded
-    @JsonIgnore()
+    private Address address;
+
+    @Embedded
     private CompanyDetails furtherDetails;
+//    @Column(name = "activation")
+//    private Boolean active = true;
 }

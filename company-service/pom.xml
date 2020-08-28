@@ -21,6 +21,11 @@
 	</properties>
 
 	<dependencies>
+<!-- 		<dependency> -->
+<!--     <groupId>com.monitorjbl</groupId> -->
+<!--     <artifactId>spring-json-view</artifactId> -->
+<!--     <version>1.0.1</version> -->
+<!-- </dependency> -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
 		    <artifactId>springfox-swagger2</artifactId>
