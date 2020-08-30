@@ -1,20 +1,21 @@
 package com.prabhu.companyservice.service.impl;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.prabhu.companyservice.repos.CompanyRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.prabhu.companyservice.dto.responses.CompanyResponse;
 import com.prabhu.companyservice.service.CompanyService;
 
 @Service
-@Qualifier("Default")
 //Change Qualifier and Service name
 public class CompanyServiceImpl implements CompanyService {
 
+	@Autowired
+	private CompanyRepo repo;
+
 	@Override
 	public CompanyResponse CompanyById(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

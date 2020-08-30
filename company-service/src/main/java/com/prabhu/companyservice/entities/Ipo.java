@@ -12,10 +12,20 @@ import java.util.Date;
  * @authoer Prabhu Madipalli
  */
 
-@Entity(name = "ipo")
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Entity(name = "ipo")
+
+@NamedQuery(
+        name = "find_ipos_by_company",
+        query = "SELECT i, c FROM ipo i JOIN a.company c"
+)
+@NamedEntityGraph(
+        name = "only company basic details"
+
+)
 public class Ipo {
 
     @Id
@@ -23,7 +33,10 @@ public class Ipo {
     @Column(name = "ipo_id")
     private int id;
 
-    @OneToOne(optional = false, fetch = FetchType.EAGER, mappedBy = "ipo")
+    @Column(name = "stock_code")
+    private String code;
+
+    @OneToOne(optional = false, fetch = FetchType.LAZY, mappedBy = "ipo")
     @JoinColumn(name = "stockcode_id", nullable = false)
     private StockCode stockCode;
 
@@ -38,6 +51,6 @@ public class Ipo {
     @Column(name = "number_of_shares", nullable = false)
     private long numberOfShares;
 
-    @Column(name = "opendate")
+    @Column(name = "open_date")
     private Date openDate;
 }
