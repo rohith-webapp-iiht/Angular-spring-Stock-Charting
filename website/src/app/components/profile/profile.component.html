@@ -1,0 +1,27 @@
+<h2>Your Profile</h2>
+<div class="card card-body mb-3">
+  <h4 class="mb-2">{{currentUser.firstName}} {{currentUser.lastName}}</h4>
+  <h6 class="mb-2">@{{currentUser.username}}
+
+    <small>
+      <button (click)="showExtended=!showExtended" class="btn btn-dark btn-sm">
+        <i [ngClass]="showExtended?'fa fa-minus':'fa fa-plus'"></i>
+      </button>
+    </small>
+  </h6>
+
+  <ul *ngIf="showExtended" class="list-group">
+
+    <li class="list-group-item">
+      Mobile Number: {{currentUser.mobileNumber}}
+    </li>
+    <li class="list-group-item">
+      Email Id: {{currentUser.email}}
+    </li>
+    <li class="list-group-item" *ngIf="currentUser.accessType=='admin'">
+      Access type:
+      <text class="text-uppercase">{{currentUser.accessType}}</text>
+    </li>
+
+  </ul>
+</div>

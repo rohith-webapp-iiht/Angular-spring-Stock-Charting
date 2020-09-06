@@ -34,10 +34,11 @@ public class User {
     @Column(nullable = false)
     private String firstName;
 
+    private String lastName;
     //Can be set only to Fixed values
     private String accessType;
 
-    private String lastName;
+    
 
     @Email
     @Column(nullable = false, unique = true)
