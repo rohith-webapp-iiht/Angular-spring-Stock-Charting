@@ -1,1 +1,30 @@
-<p>company works!</p>
+<h2>{{company?.name}}</h2>
+<div class="card card-body mb-3">
+  <div>
+    <app-person [person]="company.ceo"></app-person>
+  </div>
+
+  <app-address [address]="company.address"></app-address>
+
+  <p>Turn Over: {{company.turnover | currency}}</p>
+
+  <ul>
+    <li>{{company.furtherDetails.description}}</li>
+    <li>{{company.furtherDetails.services}}</li>
+    <li>{{company.furtherDetails.products}}</li>
+  </ul>
+
+  <ul class="list-unstyled">
+    <li *ngFor="let boardPerson of company.bod">
+      <app-person [person]="boardPerson"></app-person>
+    </li>
+  </ul>
+
+  <div *ngIf="company.sector">
+    <app-sector [sector]="company.sector"></app-sector>
+  </div>
+
+  <div *ngIf="company.stockCodes">
+
+  </div>
+</div>

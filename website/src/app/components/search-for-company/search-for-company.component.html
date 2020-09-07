@@ -1,0 +1,30 @@
+<div>
+  <form class="form-inline form-sm">
+    <div class="form-group w-75 align-self-center">
+      <label>Search the company</label>
+
+      <input (keyup)="check_text()" class="form-control ml-3 w-75 mr-3 align-self-center" type="text"
+             placeholder="Search" name="search_text"
+             [(ngModel)]="searchText"/>
+    </div>
+    <button (click)="searchText.length>=4?search_submit($event):''" class="btn ml-3" type="submit"
+            [disabled]="searchText.length<4">
+      <i class="fa fa-fw fa-search"></i>
+    </button>
+  </form>
+  <div *ngIf="showingResults">
+    <h6>Seach results: </h6>
+    <ul class="list-unstyled w-50 rounded">
+      <li *ngFor="let company of searchResults" class="card card-body pb-1 pt-1 mb-1">
+        <div class="row">
+          <div class="col-sm-4">
+            <h6>{{company.name}}</h6>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <small *ngIf="!loaded">
+      Loading more
+    </small>
+  </div>
+</div>

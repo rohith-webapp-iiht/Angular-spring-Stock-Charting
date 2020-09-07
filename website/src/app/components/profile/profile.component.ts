@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   showExtended: boolean;
 
   constructor() {
-    this.showExtended = true;
+    this.showExtended = false;
   }
 
   ngOnInit(): void {
