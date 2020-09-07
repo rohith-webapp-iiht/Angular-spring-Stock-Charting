@@ -9,7 +9,5 @@ export interface StockCode{
 
   stockExchange: StockExchange;
 
-  company: Company;
-
-  ipo?: Ipo;
+  company?: Company;
 }

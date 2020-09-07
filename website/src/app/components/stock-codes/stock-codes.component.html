@@ -1,0 +1,17 @@
+<div *ngIf="stockCode">
+  <div class="row">
+    <div class="col-sm-4">
+      <strong>Code: </strong>
+      <button (click)="codeClick($event)" class="btn"><h6>{{stockCode.code}}</h6></button>
+    </div>
+    <div class="col-sm-8">
+      <strong>Stock Exchange</strong>
+      <button (click)="stockExchangeClick($event)" class="btn btn-sm">
+        <h6>{{stockCode.stockExchange.name}}</h6>
+      </button>
+      <div *ngIf="viewStockExchange">
+        <app-stock-exhcange [stockExchange]="stockCode.stockExchange" class="pb-5"></app-stock-exhcange>
+      </div>
+    </div>
+  </div>
+</div>

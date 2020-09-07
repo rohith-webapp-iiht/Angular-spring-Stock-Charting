@@ -24,6 +24,4 @@ public class StockCodeResponse {
     private StockExchange stockExchange;
 
     private Company company;
-
-    private Ipo ipo;
 }

@@ -12,7 +12,10 @@ import {DataService} from './services/data.service';
 import {PersonComponent} from './components/person/person.component';
 import { SectorComponent } from './components/sector/sector.component';
 import { AddressComponent } from './components/address/address.component';
-import { StockCodeComponent } from './stock-code/stock-code.component';
+import { StockCodesComponent } from './components/stock-codes/stock-codes.component';
+import { StockExhcangeComponent } from './components/stock-exhcange/stock-exhcange.component';
+import { IpoComponent } from './components/ipo/ipo.component';
+import { NewUserFormComponent } from './components/new-user-form/new-user-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { StockCodeComponent } from './stock-code/stock-code.component';
     PersonComponent,
     SectorComponent,
     AddressComponent,
-    StockCodeComponent
+    StockCodesComponent,
+    StockExhcangeComponent,
+    IpoComponent,
+    NewUserFormComponent
   ],
   imports: [
     BrowserModule,

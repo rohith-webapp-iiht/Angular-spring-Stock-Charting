@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Company} from '../../model/Company';
 
 @Component({
@@ -8,9 +8,25 @@ import {Company} from '../../model/Company';
 })
 export class CompanyComponent implements OnInit {
 
+  @Input()
   company: Company;
 
+  showBoardMembers: boolean;
+  showSector: boolean;
+  showCEO: boolean;
+  showAddress: boolean;
+  showFurtherDetails: boolean;
+  showStocks: boolean;
+  showIpos: boolean;
+
   constructor() {
+    this.showBoardMembers = false;
+    this.showSector = false;
+    this.showCEO = false;
+    this.showAddress =false;
+    this.showFurtherDetails = false;
+    this.showStocks = false;
+    this.showIpos = false;
   }
 
   ngOnInit(): void {
@@ -73,7 +89,7 @@ export class CompanyComponent implements OnInit {
               },
               remarks: 'Stock Exchange 1 remarks'
             },
-            company: this.company,
+            company: this.company
           },
           {
             id: 80,
@@ -98,16 +114,43 @@ export class CompanyComponent implements OnInit {
           {
             id: 10001,
             code: 'ABD',
-            company: this.company,
             numberOfShares: 100000,
-            openDate: new Date()
+            openDate: new Date(),
+            pricePerShare: 100
           }
         ],
 
       };
     this.company.ipos[0].stockCode = this.company.stockCodes[1];
     this.company.ipos[0].stockExchange = this.company.stockCodes[1].stockExchange;
-    this.company.stockCodes[1].ipo = this.company.ipos[0];
+    this.company.ipos[0].company = this.company
   }
 
+  showBoardMembersClick($event: MouseEvent) {
+    this.showBoardMembers = !this.showBoardMembers;
+  }
+
+  showSectorClick($event: MouseEvent) {
+    this.showSector = !this.showSector;
+  }
+
+  showCEOClick($event: MouseEvent) {
+    this.showCEO = !this.showCEO;
+  }
+
+  showAddressClick($event: MouseEvent) {
+    this.showAddress = !this.showAddress;
+  }
+
+  showFurtherDetailsClick($event: MouseEvent) {
+    this.showFurtherDetails = !this.showFurtherDetails;
+  }
+
+  showStocksClick($event: MouseEvent) {
+    this.showStocks = !this.showStocks;
+  }
+
+  showIposClick($event: MouseEvent) {
+    this.showIpos = !this.showIpos;
+  }
 }

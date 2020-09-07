@@ -1,0 +1,37 @@
+<div *ngIf="ipo">
+  <ul class="list-unstyled">
+    <li class="pb-auto">
+      <strong>Number of shares:</strong> {{ipo.numberOfShares}}
+    </li>
+    <li class="pb-auto">
+      <strong>Code:</strong> {{ipo.code}}
+    </li>
+    <li class="pb-auto">
+      <strong>Price per share</strong> {{ipo.pricePerShare}}
+    </li>
+    <li class="pb-auto">
+      <strong>Number of shares</strong> {{ipo.numberOfShares}}
+    </li>
+    <li class="pb-auto">
+      <strong>Release date</strong> {{ipo.openDate}}
+    </li>
+    <li *ngIf="ipo.stockExchange"  class="pb-2">
+      <strong>Stock Exchange </strong> {{ipo.stockExchange.name}}
+      <small>
+      <button class="btn btn-sm btn-dark" (click)="showStockExchangeClick($event)">
+        <i [ngClass]="showStockExchange?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
+      </button>
+    </small>
+      <app-stock-exhcange *ngIf="showStockExchange" [stockExchange]="ipo.stockExchange"></app-stock-exhcange>
+    </li>
+
+    <li *ngIf="ipo.company && !viewingCompany"  class="pb-auto">
+      <strong>Company </strong> {{ipo.company.name}} <small>
+      <button class="btn btn-sm btn-dark" (click)="showCompanyClick($event)">
+        <i [ngClass]="showCompany?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
+      </button>
+    </small>
+      <app-company *ngIf="showCompany" [company]="ipo.company"></app-company>
+    </li>
+  </ul>
+</div>

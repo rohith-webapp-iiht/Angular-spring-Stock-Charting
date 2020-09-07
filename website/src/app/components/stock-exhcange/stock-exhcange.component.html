@@ -1,0 +1,17 @@
+<div *ngIf="stockExchange">
+  <ul class="list-group list-unstyled pb-0 mb-0">
+    <li class="list-group-item pb-1 pt-1">
+      <strong>Name: </strong> <text class="text-uppercase">{{stockExchange.name}}</text>
+    </li>
+    <li class="list-group-item pb-1 pt-1">
+      <strong>Brief: </strong> {{stockExchange.brief}}
+    </li>
+    <li class="list-group-item pb-1 pt-1">
+      <strong>Remarks: </strong> {{stockExchange.remarks}}
+    </li>
+    <li class="list-group-item pb-1 pt-1">
+      <strong>Address: </strong>
+      <app-address [address]="stockExchange.address"></app-address>
+    </li>
+  </ul>
+</div>

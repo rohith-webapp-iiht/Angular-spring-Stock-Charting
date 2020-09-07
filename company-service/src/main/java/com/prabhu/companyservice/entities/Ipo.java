@@ -51,6 +51,9 @@ public class Ipo {
     @Column(name = "number_of_shares", nullable = false)
     private long numberOfShares;
 
+    @Column(name= "price_per_share", nullable=false)
+    private long pricePerShare;
+
     @Column(name = "open_date")
     private Date openDate;
 }

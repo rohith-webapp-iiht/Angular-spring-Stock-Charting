@@ -13,6 +13,8 @@ export class Ipo{
 
   stockExchange?: StockExchange;
 
+  pricePerShare: number;
+
   numberOfShares: number;
 
   openDate: Date;
