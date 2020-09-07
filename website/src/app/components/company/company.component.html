@@ -6,7 +6,7 @@
       <small>
         <small>
           <button (click)="showCEOClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showCEO?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showCEO?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -22,7 +22,7 @@
       <small>
         <small>
           <button (click)="showAddressClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showAddress?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showAddress?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -36,7 +36,7 @@
       <small>
         <small>
           <button (click)="showFurtherDetailsClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showFurtherDetails?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showFurtherDetails?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -55,7 +55,7 @@
       <small>
         <small>
           <button (click)="showBoardMembersClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showBoardMembers?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showBoardMembers?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -73,7 +73,7 @@
       <small>
         <small>
           <button (click)="showSectorClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showSector?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showSector?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -89,7 +89,7 @@
       <small>
         <small>
           <button (click)="showStocksClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showStocks?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showStocks?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -111,7 +111,7 @@
       <small>
         <small>
           <button (click)="showIposClick($event)" class="btn btn-dark btn-sm h-1">
-            <i [ngClass]="showIpos?'fa fa-minus':'fa fa-plus'"></i>
+            <i [ngClass]="showIpos?'fa fa-arrow-down':'fa fa-arrow-right'"></i>
           </button>
         </small>
       </small>
@@ -119,7 +119,7 @@
     <div *ngIf="company.ipos && company.ipos?.length > 0 && showIpos">
       <ul class="list-group">
         <li class="list-group-item w-50" *ngFor="let ipo of company.ipos">
-          <app-ipo [ipo]="ipo" [viewingCompany]="false"></app-ipo>
+          <app-ipo [ipo]="ipo" [viewingCompany]="true"></app-ipo>
         </li>
       </ul>
     </div>

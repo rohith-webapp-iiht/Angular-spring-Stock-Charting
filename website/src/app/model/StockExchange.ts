@@ -1,6 +1,6 @@
 import {Address} from './Address';
 
-export interface StockExchange{
+export class StockExchange{
   id: number;
 
   name: string;

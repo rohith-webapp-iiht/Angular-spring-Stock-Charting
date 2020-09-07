@@ -4,13 +4,13 @@ import {StockCode} from './StockCode';
 import {Ipo} from './Ipo';
 import {Address} from './Address';
 
-interface CompanyDetails {
+class CompanyDetails {
   description: string;
   services: string;
   products: string;
 }
 
-export interface Company{
+export class Company{
   id: number;
   name: string;
   turnover?: number;

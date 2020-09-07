@@ -1,4 +1,4 @@
-export interface User{
+export class User{
   id?: number;
   username: string;
   firstName: string;
@@ -7,4 +7,5 @@ export interface User{
   email: string;
   mobileNumber?: string;
   confirmed?: boolean;
+  password?: string;
 }

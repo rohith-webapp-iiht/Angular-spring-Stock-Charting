@@ -1,4 +1,4 @@
-export interface Sector{
+export class Sector{
   id: number;
   name: string;
   brief: string;

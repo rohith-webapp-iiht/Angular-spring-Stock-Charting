@@ -25,7 +25,7 @@
       <app-stock-exhcange *ngIf="showStockExchange" [stockExchange]="ipo.stockExchange"></app-stock-exhcange>
     </li>
 
-    <li *ngIf="ipo.company && !viewingCompany"  class="pb-auto">
+    <li *ngIf="ipo.company && viewingCompany"  class="pb-auto">
       <strong>Company </strong> {{ipo.company.name}} <small>
       <button class="btn btn-sm btn-dark" (click)="showCompanyClick($event)">
         <i [ngClass]="showCompany?'fa fa-arrow-down':'fa fa-arrow-right'"></i>

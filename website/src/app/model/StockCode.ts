@@ -2,7 +2,7 @@ import {Company} from './Company';
 import {StockExchange} from './StockExchange';
 import {Ipo} from './Ipo';
 
-export interface StockCode{
+export class StockCode{
   id: number;
 
   code: string;

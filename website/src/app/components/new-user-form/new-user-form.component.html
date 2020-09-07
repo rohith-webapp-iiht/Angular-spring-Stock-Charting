@@ -1,0 +1,156 @@
+<div class="card-body card w-75">
+  <h4>Create New User</h4>
+  <form #userForm="ngForm" (ngSubmit)="formSubmit(userForm)" class="w-75">
+    <!--  First Name-->
+    <div class="form-group">
+      <label>First Name</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.firstName"
+        class="form-control"
+        name="firstName"
+        #userFirstName="ngModel"
+        required
+        minlength="2"
+        [ngClass]="{'is-invalid':userFirstName.errors && userFirstName.touched}"
+      >
+      <!--    userFirstName is the name for the current input tag-->
+      <!--    ngClass in the input tag changes the look of the input stream-->
+      <div [hidden]="!userFirstName.errors?.required" class="invalid-feedback">
+        First name required
+      </div>
+      <div class="invalid-feedback" [hidden]="!userFirstName.errors?.minlength">
+        Must be at least 2 characters
+      </div>
+    </div>
+
+    <!--  Last Name-->
+    <div class="form-group">
+      <label>Last Name</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.lastName"
+        class="form-control"
+        name="lastName"
+        #userLastName="ngModel"
+        required
+        minlength="2"
+        [ngClass]="{'is-invalid':userLastName.errors && userLastName.touched}"
+      >
+      <div [hidden]="!userLastName.errors?.required" class="invalid-feedback">
+        Last name required
+      </div>
+      <div class="invalid-feedback" [hidden]="!userLastName.errors?.minlength">
+        Must be at least 2 characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Required Username:</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.username"
+        class="form-control"
+        name="lastName"
+        #userUsername="ngModel"
+        required
+        minlength="3"
+        [ngClass]="{'is-invalid':userUsername.errors && userUsername.touched}"
+      >
+      <div [hidden]="!userUsername.errors?.required" class="invalid-feedback">
+        Username required
+      </div>
+      <div class="invalid-feedback" [hidden]="!userUsername.errors?.minlength">
+        Must be at least 3 characters
+      </div>
+    </div>
+
+    <!--  Access Type-->
+    <div class="form-group">
+      <label>Access Type:</label>
+      <select
+        name="accessType"
+        [(ngModel)]="newUser.accessType"
+        id="accessType"
+        class="form-control"
+        required
+      >
+        <option *ngFor="let access of AccessTypes" [ngValue]="access">{{access}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label></label>
+    </div>
+
+    <!--  Email Id-->
+    <div class="form-group">
+      <label>Email Id:</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.email"
+        class="form-control"
+        name="email"
+        #userEmail="ngModel"
+        required
+        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+        [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
+      >
+      <div *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)"
+           class="alert alert-danger">
+        <div [hidden]="!userEmail.errors?.required">
+          Email Id required
+        </div>
+        <div [hidden]="!userEmail.errors?.pattern">
+          Should be an valid email id
+        </div>
+      </div>
+    </div>
+
+    <!--  Mobile Number-->
+    <div class="form-group">
+      <label>Mobile Number:</label>
+      <input
+        type="text"
+        [(ngModel)]="newUser.mobileNumber"
+        class="form-control"
+        name="mobileNumber"
+        #userMobileNumber="ngModel"
+        pattern="^((\\+91-?)|0)?[0-9]{10}$"
+        [ngClass]="{'is-invalid':userMobileNumber.errors && userMobileNumber.touched}"
+      >
+      <div class="invalid-feedback" [hidden]="!userMobileNumber.errors?.pattern">
+        Enter a valid 10 digit mobile number
+      </div>
+    </div>
+
+    <!-- Password Main-->
+    <div class="form-group">
+      <label>Password:</label>
+      <input
+        type="password"
+        [(ngModel)]="newUser.password"
+        class="form-control"
+        name="password"
+        #userPassword="ngModel"
+        required
+        minlength="8"
+
+        [ngClass]="{'is-invalid':userPassword.errors && userPassword.touched}"
+      >
+      <div *ngIf="userPassword.invalid && (userPassword.dirty || userPassword.touched)"
+           class="alert alert-danger">
+        <div [hidden]="!userPassword.errors?.required">
+          Enter a password
+        </div>
+
+        <div [hidden]="!userPassword.errors?.minlength">
+          Password should have a minimum length of 8 characters
+        </div>
+      </div>
+    </div>
+
+    <button [disabled]="!userForm.form.valid" class="btn btn-block btn-dark mb-5 rounded">Create Your Profile</button>
+
+  </form>
+</div>
