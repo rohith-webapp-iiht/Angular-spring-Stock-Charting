@@ -2,24 +2,26 @@
   <div class="container">
     <a href="#" class="navbar-brand">Stock Pricing</a>
   </div>
-  <ul class="navbar-nav" *ngIf="!loggedIn">
-    <li>
-      <a (click)="login($event)" href="#" class="nav-link active"><i class="fa fa-fw fa-user"></i> Login</a>
-    </li>
-  </ul>
-  <ul class="navbar-nav" *ngIf="loggedIn">
-    <li class="nav-item ml-auto" >
-      <a class="nav-link active" href="#">Find Data</a>
-    </li>
-    <li class="nav-item ml-auto">
-<!--      Only Admin-->
-      <a class="nav-link active" href="#">Edit Data</a>
-    </li>
-    <li class="nav-item ml-auto">
-      <a class="nav-link active" href="#">User Profile</a>
-    </li>
-    <li class="nav-item ml-auto">
-      <a href="#" class="nav-link active"><i class="fa fa-fw fa-search"></i></a>
-    </li>
-  </ul>
+  <div class="w-auto">
+    <ul class="navbar-nav" *ngIf="!loggedIn">
+      <li>
+        <a (click)="login($event)" href="#" class="nav-link active"><i class="fa fa-fw fa-user"></i> Login</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="loggedIn">
+      <li class="nav-item ml-auto">
+        <a class="nav-link active" href="#">Find Data</a>
+      </li>
+      <li class="nav-item ml-auto">
+        <!--      Only Admin-->
+        <a class="nav-link active" href="#">Edit Data</a>
+      </li>
+      <li class="nav-item ml-auto">
+        <a class="nav-link active" href="#">User Profile</a>
+      </li>
+      <li class="nav-item ml-auto">
+        <a href="#" class="nav-link active"><i class="fa fa-fw fa-search"></i></a>
+      </li>
+    </ul>
+  </div>
 </nav>

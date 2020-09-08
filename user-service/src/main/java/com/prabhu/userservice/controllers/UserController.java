@@ -19,7 +19,7 @@ import java.util.Optional;
  */
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping(value = "/api/users")
 public class UserController {
 
 
@@ -46,18 +46,21 @@ public class UserController {
         return new ResponseEntity<>(cr.get(), HttpStatus.FOUND);
     }
 
-    @GetMapping("/search/name/{partName}")
-    public ResponseEntity<Iterable<UserDto>> byName(@PathVariable String partName) {
+//    @GetMapping("/search/name/{partName}")
+//    public ResponseEntity<Iterable<UserDto>> byName(@PathVariable String partName) {
+//
+//        Iterable<UserDto> usersFound = userService.getByName(partName);
+//        return new ResponseEntity<>(usersFound, HttpStatus.OK);
+//    }
 
-        Iterable<UserDto> usersFound = userService.getByName(partName);
-        return new ResponseEntity<>(usersFound, HttpStatus.OK);
-    }
-
-    @PostMapping("/new_user")
+    @PostMapping(value = "/new_user")
+    @CrossOrigin
     public ResponseEntity<String> saveUser(@RequestBody User user) {
+        System.out.println("user");
 
         userService.saveCustomer(user);
-        return new ResponseEntity<>("Account created", HttpStatus.ACCEPTED);
+
+        return new ResponseEntity<>("Successfully created", HttpStatus.ACCEPTED);
     }
 
     @PostMapping("/activate")

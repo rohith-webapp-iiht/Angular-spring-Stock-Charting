@@ -1,9 +1,14 @@
-<app-navbar></app-navbar>
+<app-navbar [loggedIn]="loggedIn" (loggingIn)="showLoginFormEvent()"></app-navbar>
+
 <div class="container">
-  <app-new-user-form></app-new-user-form>
-  <app-profile></app-profile>
+
+  <app-new-user-form *ngIf="!loggedIn && showCreateUserForm"></app-new-user-form>
+
+  <app-login-form *ngIf="showLoginForm && !loggedIn && !showCreateUserForm"></app-login-form>
+
+  <!--  <app-profile></app-profile>
   <app-company></app-company>
   <br>
-  <app-search-for-company></app-search-for-company>
+  <app-search-for-company></app-search-for-company>-->
 </div>
 

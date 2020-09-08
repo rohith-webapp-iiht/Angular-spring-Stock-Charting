@@ -16,6 +16,8 @@ import { StockCodesComponent } from './components/stock-codes/stock-codes.compon
 import { StockExhcangeComponent } from './components/stock-exhcange/stock-exhcange.component';
 import { IpoComponent } from './components/ipo/ipo.component';
 import { NewUserFormComponent } from './components/new-user-form/new-user-form.component';
+import {HttpClientModule} from '@angular/common/http';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,14 @@ import { NewUserFormComponent } from './components/new-user-form/new-user-form.c
     StockCodesComponent,
     StockExhcangeComponent,
     IpoComponent,
-    NewUserFormComponent
+    NewUserFormComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

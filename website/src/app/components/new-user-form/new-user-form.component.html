@@ -26,7 +26,7 @@
 
     <!--  Last Name-->
     <div class="form-group">
-      <label>Last Name</label>
+      <label>Last Name: </label>
       <input
         type="text"
         [(ngModel)]="newUser.lastName"
@@ -45,13 +45,14 @@
       </div>
     </div>
 
+    <!--    Username-->
     <div class="form-group">
       <label>Required Username:</label>
       <input
         type="text"
         [(ngModel)]="newUser.username"
         class="form-control"
-        name="lastName"
+        name="username"
         #userUsername="ngModel"
         required
         minlength="3"

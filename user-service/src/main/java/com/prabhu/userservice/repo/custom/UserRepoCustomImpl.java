@@ -5,10 +5,8 @@ import com.prabhu.userservice.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.persistence.EntityManager;
-import java.util.Optional;
 
 /**
  * This belongs to user-service

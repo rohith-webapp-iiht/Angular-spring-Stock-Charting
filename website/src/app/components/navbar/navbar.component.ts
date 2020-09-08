@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input()
   loggedIn: boolean;
+
+  @Output() loggingIn = new EventEmitter<void>()
 
   constructor() {
     this.loggedIn = true;
@@ -18,6 +21,6 @@ export class NavbarComponent implements OnInit {
 
   login(e): void {
     e.preventDefault();
-    this.loggedIn = true;
+    this.loggingIn.emit();
   }
 }

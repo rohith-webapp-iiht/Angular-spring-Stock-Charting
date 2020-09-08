@@ -30,7 +30,7 @@ public interface UserService {
 
     Optional<UserDto> findByEmailId(@Email String email);
 
-    void saveCustomer(User user);
+    User saveCustomer(User user);
 
     void activate(String username, String email, int userId) throws AccountActivationException;
 }
