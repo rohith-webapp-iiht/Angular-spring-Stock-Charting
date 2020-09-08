@@ -1,4 +1,11 @@
-<app-navbar [loggedIn]="loggedIn" (loggingIn)="showLoginFormEvent()"></app-navbar>
+<app-navbar [loggedIn]="loggedIn"
+            [showSignUpButton] = "!showCreateUserForm && !loggedIn"
+            [showLoginButton]="!loggedIn && !showLoginForm"
+
+            (loggingIn)="showLoginFormEvent()"
+            (signingUp)="showCreateUserFormEvent()">
+
+</app-navbar>
 
 <div class="container">
 

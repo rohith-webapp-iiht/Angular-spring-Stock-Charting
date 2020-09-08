@@ -1,12 +1,14 @@
-package com.prabhu.userservice.entities;
+package com.prabhu.userservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * This belongs to user-service
@@ -14,32 +16,14 @@ import javax.validation.constraints.NotNull;
  * @author Prabhu Madipalli
  */
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserCreationRequestModel {
 
-    /**
-     * This is for SQL Identification
-     */
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonIgnore
-    private int id;
-
-
-    /**
-     * THis is for user to indentify
-     *
-     * @Pattern(regexp = "^[A-Za-z]*$")
-     * @Size(max = 25, min = 3)
-     * @NotNull
-     */
-
-    /**
-     * This is used for logging in and the user can choose what it can be.
-     */
+    @Pattern(regexp = "^[A-Za-z]*$")
+    @Size(max = 25, min = 3)
+    @NotNull
     @Column(nullable = false, unique = true)
     private String username;
 

@@ -17,6 +17,9 @@ export class LoginFormComponent implements OnInit {
   }
 
   formSubmit(loginForm: any) {
+    if(loginForm.valid){
+      
+    }
 
   }
 }

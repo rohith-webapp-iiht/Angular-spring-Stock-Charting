@@ -18,4 +18,10 @@ export class AppComponent {
     this.showLoginForm = true;
     this.showCreateUserForm = false;
   }
+
+  showCreateUserFormEvent() {
+    this.showLoginForm = false;
+    this.loggedIn = false;
+    this.showCreateUserForm = true;
+  }
 }
