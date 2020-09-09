@@ -1,12 +1,13 @@
 package com.prabhu.userservice.repo.custom;
 
-import com.prabhu.userservice.entities.UserEntity;
-import com.prabhu.userservice.repo.UserRepo;
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
+import com.prabhu.userservice.entities.UserEntity;
+import com.prabhu.userservice.repo.UserRepo;
 
 /**
  * This belongs to user-service

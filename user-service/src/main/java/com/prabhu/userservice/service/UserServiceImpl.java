@@ -1,11 +1,14 @@
 package com.prabhu.userservice.service;
 
-import com.prabhu.userservice.entities.UserEntity;
-import com.prabhu.userservice.exceptions.AccountActivationException;
-import com.prabhu.userservice.exceptions.UserNotFound;
-import com.prabhu.userservice.repo.UserRepo;
-import com.prabhu.userservice.shared.UserDto;
-import com.prabhu.userservice.ui.model.UserResponseModel;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +19,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import com.prabhu.userservice.entities.UserEntity;
+import com.prabhu.userservice.exceptions.AccountActivationException;
+import com.prabhu.userservice.exceptions.UserNotFound;
+import com.prabhu.userservice.repo.UserRepo;
+import com.prabhu.userservice.shared.UserDto;
+import com.prabhu.userservice.ui.model.UserResponseModel;
 
 /**
  * This belongs to user-service

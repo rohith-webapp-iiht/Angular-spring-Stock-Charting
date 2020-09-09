@@ -1,10 +1,10 @@
 package com.prabhu.companyservice.entities;
 
+import javax.persistence.Embeddable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Embeddable;
 
 /**
  * @project company-service

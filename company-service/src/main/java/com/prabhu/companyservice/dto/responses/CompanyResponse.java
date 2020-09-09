@@ -1,13 +1,14 @@
 package com.prabhu.companyservice.dto.responses;
 
+import java.util.List;
+
 import com.prabhu.companyservice.entities.Address;
 import com.prabhu.companyservice.entities.CompanyDetails;
 import com.prabhu.companyservice.entities.Person;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
  * @project company-service

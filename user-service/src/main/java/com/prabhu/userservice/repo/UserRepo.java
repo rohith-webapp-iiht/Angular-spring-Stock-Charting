@@ -1,11 +1,12 @@
 package com.prabhu.userservice.repo;
 
-import com.prabhu.userservice.entities.UserEntity;
-import com.prabhu.userservice.repo.custom.UserRepoCustom;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.prabhu.userservice.entities.UserEntity;
+import com.prabhu.userservice.repo.custom.UserRepoCustom;
 
 /**
  * This belongs to user-service

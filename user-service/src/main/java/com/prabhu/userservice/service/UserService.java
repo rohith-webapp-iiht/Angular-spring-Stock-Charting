@@ -1,14 +1,16 @@
 package com.prabhu.userservice.service;
 
-import com.prabhu.userservice.entities.UserEntity;
-import com.prabhu.userservice.ui.model.UserResponseModel;
-import com.prabhu.userservice.exceptions.AccountActivationException;
-import com.prabhu.userservice.shared.UserDto;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import java.util.Optional;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import java.util.Optional;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+
+import com.prabhu.userservice.entities.UserEntity;
+import com.prabhu.userservice.exceptions.AccountActivationException;
+import com.prabhu.userservice.shared.UserDto;
+import com.prabhu.userservice.ui.model.UserResponseModel;
 
 /**
  * This belongs to user-service

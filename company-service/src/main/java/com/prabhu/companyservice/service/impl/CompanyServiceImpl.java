@@ -1,10 +1,10 @@
 package com.prabhu.companyservice.service.impl;
 
-import com.prabhu.companyservice.repos.CompanyRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.prabhu.companyservice.dto.responses.CompanyResponse;
+import com.prabhu.companyservice.repos.CompanyRepo;
 import com.prabhu.companyservice.service.CompanyService;
 
 @Service

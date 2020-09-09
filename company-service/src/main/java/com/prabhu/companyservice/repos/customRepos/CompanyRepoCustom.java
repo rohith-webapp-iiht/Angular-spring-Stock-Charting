@@ -1,9 +1,9 @@
 package com.prabhu.companyservice.repos.customRepos;
 
-import com.prabhu.companyservice.entities.Company;
-
 import java.util.List;
 import java.util.Optional;
+
+import com.prabhu.companyservice.entities.Company;
 
 /**
  * @author Prabhu Madipalli

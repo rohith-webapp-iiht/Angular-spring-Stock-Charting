@@ -1,16 +1,22 @@
 package com.prabhu.userservice.ui.controllers;
 
-import com.prabhu.userservice.service.UserService;
-import com.prabhu.userservice.shared.UserDto;
-import com.prabhu.userservice.ui.model.UserCreationRequestModel;
-import com.prabhu.userservice.ui.model.UserResponseModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.prabhu.userservice.service.UserService;
+import com.prabhu.userservice.shared.UserDto;
+import com.prabhu.userservice.ui.model.UserCreationRequestModel;
+import com.prabhu.userservice.ui.model.UserResponseModel;
 
 /**
  * This belongs to user-service

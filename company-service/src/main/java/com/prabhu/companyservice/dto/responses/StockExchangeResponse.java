@@ -1,14 +1,10 @@
 package com.prabhu.companyservice.dto.responses;
 
 import com.prabhu.companyservice.entities.Address;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 /**
  * @project company-service

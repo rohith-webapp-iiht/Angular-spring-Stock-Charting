@@ -1,14 +1,15 @@
 package com.prabhu.companyservice.repos;
 
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.prabhu.companyservice.entities.Company;
 import com.prabhu.companyservice.entities.Ipo;
 import com.prabhu.companyservice.entities.StockCode;
 import com.prabhu.companyservice.entities.StockExchange;
 import com.prabhu.companyservice.repos.customRepos.IpoRepoCustom;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Date;
-import java.util.List;
 
 /**
  * This belongs to company-service

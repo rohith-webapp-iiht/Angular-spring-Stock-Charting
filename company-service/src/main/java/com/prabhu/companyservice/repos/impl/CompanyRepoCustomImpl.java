@@ -1,16 +1,18 @@
 package com.prabhu.companyservice.repos.impl;
 
-import com.prabhu.companyservice.entities.Company;
-import com.prabhu.companyservice.entities.StockCode;
-import com.prabhu.companyservice.repos.customRepos.CompanyRepoCustom;
-import org.springframework.stereotype.Repository;
+import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.EntityGraph;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Subgraph;
-import java.util.List;
-import java.util.Optional;
+
+import org.springframework.stereotype.Repository;
+
+import com.prabhu.companyservice.entities.Company;
+import com.prabhu.companyservice.entities.StockCode;
+import com.prabhu.companyservice.repos.customRepos.CompanyRepoCustom;
 
 /**
  * This belongs to company-service

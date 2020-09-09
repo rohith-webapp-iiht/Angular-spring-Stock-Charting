@@ -1,11 +1,9 @@
 package com.prabhu.companyservice.dto.responses;
 
-import com.prabhu.companyservice.entities.Company;
-import com.prabhu.companyservice.entities.StockCode;
-import com.prabhu.companyservice.entities.StockExchange;
-
-import javax.persistence.*;
 import java.util.Date;
+
+import com.prabhu.companyservice.entities.Company;
+import com.prabhu.companyservice.entities.StockExchange;
 
 /**
  * @project company-service

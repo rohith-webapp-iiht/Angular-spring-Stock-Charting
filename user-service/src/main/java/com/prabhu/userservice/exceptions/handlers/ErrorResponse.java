@@ -1,10 +1,10 @@
 package com.prabhu.userservice.exceptions.handlers;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
 
 /**
  * @project customer-service

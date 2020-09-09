@@ -1,12 +1,11 @@
 package com.prabhu.companyservice.entities;
 
+import javax.persistence.Embeddable;
+import javax.validation.constraints.Size;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.Embeddable;
-
-import javax.validation.constraints.Size;
 
 /**
  * @project company-service

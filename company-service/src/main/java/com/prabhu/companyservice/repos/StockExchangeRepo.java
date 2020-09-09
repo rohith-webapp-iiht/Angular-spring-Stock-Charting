@@ -1,7 +1,8 @@
 package com.prabhu.companyservice.repos;
 
-import com.prabhu.companyservice.entities.StockExchange;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.prabhu.companyservice.entities.StockExchange;
 
 /**
  * This belongs to company-service
