@@ -6,7 +6,7 @@ package com.prabhu.userservice.exceptions;
  */
 
 
-public class AccountActivationException extends Throwable {
+public class AccountActivationException extends RuntimeException {
 
     public AccountActivationException(String message) {
         super(message);

@@ -1,6 +1,6 @@
 package com.prabhu.userservice.repo.custom;
 
-import com.prabhu.userservice.entities.User;
+import com.prabhu.userservice.entities.UserEntity;
 import com.prabhu.userservice.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -26,8 +26,8 @@ public class UserRepoCustomImpl implements UserRepoCustom {
 
     @Override
     public void setCondirmedTrue(int userId) {
-        User user = repo.findById(userId).get();
-        user.setConfirmed(true);
-        repo.save(user);
+        UserEntity userEntity = repo.findById(userId).get();
+        userEntity.setConfirmed(true);
+        repo.save(userEntity);
     }
 }

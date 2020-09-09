@@ -1,14 +1,11 @@
-package com.prabhu.userservice.dto;
+package com.prabhu.userservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * This belongs to user-service
@@ -16,14 +13,25 @@ import javax.persistence.Id;
  * @author Prabhu Madipalli
  */
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserCreationRequestModel {
+public class UserEntity {
 
-    @Pattern(regexp = "^[A-Za-z]*$")
-    @Size(max = 25, min = 3)
-    @NotNull
+    /**
+     * This is for SQL Identification
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
+    private int id;
+
+
+    /**
+     * This is for user to identify himself
+     * This is used for logging in and the user can choose what it can be.
+     */
     @Column(nullable = false, unique = true)
     private String username;
 
@@ -44,7 +52,7 @@ public class UserCreationRequestModel {
      * this. We generate this while creating the User
      */
     @Column(nullable = false)
-    private String UserId;
+    private String userId;
 
     /**
      * Password encrypted by Spring Security
@@ -59,15 +67,12 @@ public class UserCreationRequestModel {
     private String accessType;
 
 
-//    @Email
     /**
      * This is only for verification and contacting not for user identification. Can be used for password retrieval.
      */
     @Column(nullable = false, unique = true)
     private String email;
 
-//    @Pattern(regexp = "(^$|[0-9]{10})")
-//    @Digits(integer = 10, fraction = 0)
     /**
      * This is also similar to Email Id. But can be null
      */
@@ -77,5 +82,5 @@ public class UserCreationRequestModel {
     /**
      * Whether the email is verified or not
      */
-    private boolean Confirmed;
+    private boolean confirmed;
 }

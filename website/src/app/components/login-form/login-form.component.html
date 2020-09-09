@@ -13,13 +13,18 @@
         #loginUsername="ngModel"
         required
         minlength="3"
+        maxlength="25"
+        pattern="^[A-Za-z0-9]*$"
         [ngClass]="{'is-invalid':loginUsername.errors && loginUsername.touched}"
       >
       <div [hidden]="loginUsername.errors?.required" class="invalid-feedback">
         Username required
       </div>
-      <div class="invalid-feedback" [hidden]="!loginUsername.errors?.minlength">
-        Must be at least 3 characters
+      <div class="invalid-feedback" [hidden]="!loginUsername.errors?.minlength || !loginUsername.errors?.maxlength">
+        Must be at least 3 characters and maximum of 25 characters
+      </div>
+      <div class="invalid-feedback" [hidden]="!loginUsername.errors?.pattern">
+        Should contain only alphabets and numbers
       </div>
     </div>
 

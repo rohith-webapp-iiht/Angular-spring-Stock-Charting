@@ -6,7 +6,7 @@ package com.prabhu.userservice.exceptions;
  */
 
 
-public class UserNotFound extends Throwable {
+public class UserNotFound extends RuntimeException {
 
     public UserNotFound(String message) {
         super(message);

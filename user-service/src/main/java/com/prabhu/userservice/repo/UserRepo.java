@@ -1,6 +1,6 @@
 package com.prabhu.userservice.repo;
 
-import com.prabhu.userservice.entities.User;
+import com.prabhu.userservice.entities.UserEntity;
 import com.prabhu.userservice.repo.custom.UserRepoCustom;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,18 +13,21 @@ import java.util.Optional;
  * @author Prabhu Madipalli
  */
 
-public interface UserRepo extends JpaRepository<User, Integer>, UserRepoCustom {
+public interface UserRepo extends JpaRepository<UserEntity, Integer>, UserRepoCustom {
 
 
-    boolean existsUserByUsername(String username);
+    boolean existsUserEntityByUsername(String username);
 
-    boolean existsUserByEmail(String email);
+    boolean existsUserEntityByEmail(String email);
 
-    Optional<User> findUserByUsername(String username);
+    Optional<UserEntity> findUserEntityByUsername(String username);
 
-    Optional<User> findUserByEmail(String email);
+    Optional<UserEntity> findUserEntityByEmail(String email);
 
-    Optional<User> findUserByMobileNumber(String mobileNumber);
+    Optional<UserEntity> findUserEntityByMobileNumber(String mobileNumber);
 
-    List<User> findUsersByFirstNameContainingOrLastNameContaining(String partName, String parName);
+    List<UserEntity> findUserEntitiesByFirstNameContainingOrLastNameContaining(String partName, String parName);
+
+    Optional<UserEntity> findUserEntityByUserId(String userId);
+
 }

@@ -12,6 +12,7 @@
         #userFirstName="ngModel"
         required
         minlength="2"
+
         [ngClass]="{'is-invalid':userFirstName.errors && userFirstName.touched}"
       >
       <!--    userFirstName is the name for the current input tag-->
@@ -56,14 +57,20 @@
         #userUsername="ngModel"
         required
         minlength="3"
+        maxlength="25"
+        pattern="^[A-Za-z0-9]*$"
         [ngClass]="{'is-invalid':userUsername.errors && userUsername.touched}"
       >
       <div [hidden]="!userUsername.errors?.required" class="invalid-feedback">
         Username required
       </div>
-      <div class="invalid-feedback" [hidden]="!userUsername.errors?.minlength">
-        Must be at least 3 characters
+      <div class="invalid-feedback" [hidden]="!userUsername.errors?.minlength || !userUsername.errors?.maxlength">
+        Must be at least 3 characters and maximum of 25 characters
       </div>
+      <div class="invalid-feedback" [hidden]="!userUsername.errors?.pattern">
+        Should contain only alphabets and numbers
+      </div>
+
     </div>
 
     <!--  Access Type-->

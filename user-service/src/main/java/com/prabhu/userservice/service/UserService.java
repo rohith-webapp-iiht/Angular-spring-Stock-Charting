@@ -1,13 +1,13 @@
 package com.prabhu.userservice.service;
 
-import com.prabhu.userservice.dto.UserDto;
-import com.prabhu.userservice.entities.User;
+import com.prabhu.userservice.entities.UserEntity;
+import com.prabhu.userservice.ui.model.UserResponseModel;
 import com.prabhu.userservice.exceptions.AccountActivationException;
+import com.prabhu.userservice.shared.UserDto;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.util.Optional;
 
 /**
@@ -16,21 +16,28 @@ import java.util.Optional;
  * @author Prabhu Madipalli
  */
 
-public interface UserService {
+public interface UserService extends UserDetailsService {
 
-    Optional<UserDto> findById(@NotNull int id);
 
-    Optional<UserDto> findByUsername(@Size(max = 25, min = 3)
-                                     @NotNull
-                                     @Pattern(regexp = "^[A-Za-z]*$") String username);
 
-    public Iterable<UserDto> getAllUsers();
+    UserDto createUser(UserDto userDto);
 
-    Iterable<UserDto> getByName(String name);
+    UserDto getUserDetailsByUsername(String username);
 
-    Optional<UserDto> findByEmailId(@Email String email);
+    UserDto getUserDetailsByUserId(String userId);
 
-    User saveCustomer(User user);
+    //Until Here compulsory functions
+
+    Optional<UserResponseModel> findById(@NotNull int id);
+
+    public Iterable<UserResponseModel> getAllUsers();
+
+    Iterable<UserResponseModel> getByName(String name);
+
+    Optional<UserResponseModel> findByEmailId(@Email String email);
+
+    UserEntity saveUser(UserEntity userEntity);
 
     void activate(String username, String email, int userId) throws AccountActivationException;
+
 }

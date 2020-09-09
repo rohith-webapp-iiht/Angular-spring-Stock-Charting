@@ -1,10 +1,12 @@
-package com.prabhu.userservice.dto;
+package com.prabhu.userservice.ui.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  * This belongs to user-service
@@ -15,22 +17,14 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class UserLoginRequestModel {
 
-    private int id;
-
+    @Pattern(regexp = "^[A-Za-z]*$")
+    @Size(max = 100, min = 3)
     @NotNull
     private String username;
 
-    private String firstName;
-
-    private String lastName;
-
-    private String accessType;
-
-    private String email;
-
-    private String mobileNumber;
-
-    private boolean Confirmed;
+    @Size(min = 8)
+    @NotNull
+    private String password;
 }
