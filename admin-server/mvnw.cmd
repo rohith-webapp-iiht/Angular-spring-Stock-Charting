@@ -178,5 +178,4 @@ if exist "%HOME%\mavenrc_post.cmd" call "%HOME%\mavenrc_post.cmd"
 if "%MAVEN_BATCH_PAUSE%" == "on" pause
 
 if "%MAVEN_TERMINATE_CMD%" == "on" exit %ERROR_CODE%
-
 exit /B %ERROR_CODE%
