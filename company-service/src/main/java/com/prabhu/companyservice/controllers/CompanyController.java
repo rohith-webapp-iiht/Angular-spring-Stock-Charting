@@ -12,7 +12,6 @@ import com.prabhu.companyservice.service.CompanyService;
 
 /**
  * @project company-service
- * @authoer Prabhu Madipalli
  */
 
 
