@@ -12,7 +12,6 @@ import javax.persistence.Id;
 
 /**
  * @project company-service
- * @authoer Prabhu Madipalli
  */
 
 @Data
