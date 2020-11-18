@@ -16,7 +16,6 @@ import javax.persistence.*;
 
 public class StockCodeResponse {
 
-
     private int id;
 
     private String code;
