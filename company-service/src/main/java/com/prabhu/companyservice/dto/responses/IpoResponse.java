@@ -24,6 +24,5 @@ public class IpoResponse {
     private StockExchange stockExchange;
 
     private long numberOfShares;
-
     private Date openDate;
 }
