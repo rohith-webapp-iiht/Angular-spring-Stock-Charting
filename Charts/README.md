@@ -6,7 +6,6 @@ The Chart control is used to visualize the data with user interactivity and prov
 
 >
 
-
 ## Setup
 To install this package and its dependent packages, use the following command
 
