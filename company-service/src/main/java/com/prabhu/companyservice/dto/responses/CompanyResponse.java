@@ -40,6 +40,5 @@ public class CompanyResponse {
     private List<IpoResponse> ipos;
 
     private Address address;
-
     private CompanyDetails furtherDetails;
 }
