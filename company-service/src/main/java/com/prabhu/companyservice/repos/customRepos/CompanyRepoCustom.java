@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author Prabhu Madipalli
  */
 
 public interface CompanyRepoCustom {
