@@ -1,1 +1,1 @@
-# Stock Price Charting Application
+# Stock Price Charting Application 
