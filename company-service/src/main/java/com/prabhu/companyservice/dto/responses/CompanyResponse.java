@@ -38,7 +38,6 @@ public class CompanyResponse {
     private SectorResponse sector;
 
     private List<IpoResponse> ipos;
-
     private Address address;
     private CompanyDetails furtherDetails;
 }
