@@ -1,5 +1,4 @@
 package com.prabhu.userservice;
-
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.boot.SpringApplication;
