@@ -1,5 +1,4 @@
 package com.prabhu.stockpricing.entities;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
